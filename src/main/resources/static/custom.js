@@ -18,8 +18,18 @@ function initMap() {
       },
       map: map,
     });
+    // makeInfoWindowEvent(map, infowindow, "test" + i, marker);
+
+    // markers.push(marker);
   }
 }
+
+// function makeInfoWindowEvent(map, infowindow, contentString, marker) {
+//   google.maps.event.addListener(marker, "click", function () {
+//     infowindow.setContent(contentString);
+//     infowindow.open(map, marker);
+//   });
+// }
 
 // Try HTML5 geolocation.
 if (navigator.geolocation) {
@@ -31,7 +41,7 @@ if (navigator.geolocation) {
       };
 
       infoWindow.setPosition(pos);
-      infoWindow.setContent("Location found.");
+      infoWindow.setContent("You are here.");
       infoWindow.open(map);
       map.setCenter(pos);
     },
