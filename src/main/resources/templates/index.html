@@ -50,30 +50,37 @@
               </button>
             </div>
           </form>
+          <!-- <span th:if="${buses == null}">
+            Enter a valid address/city.
+          </span> -->
           <br />
         </div>
       </div>
+
       <div class="row" th:if="${buses != null and buses.size() > 0}">
-        <table class="table table-striped">
-          <tr>
-            <th>Route #</th>
-            <th>Bus #</th>
-            <th>Next Stop</th>
-            <th>Distance (mi)</th>
-          </tr>
-          <tr th:each="bus: ${buses}">
-            <td th:text="${bus.ROUTE}"></td>
-            <td th:text="${bus.VEHICLE}"></td>
-            <td th:text="${bus.TIMEPOINT}"></td>
-            <td th:text="${bus.distance}"></td>
-          </tr>
-        </table>
+        <div class="col-md-6">
+          <table class="table table-striped">
+            <tr>
+              <th>Route #</th>
+              <th>Bus #</th>
+              <th>Next Stop</th>
+              <th>Distance (mi)</th>
+            </tr>
+            <tr th:each="bus: ${buses}">
+              <td th:text="${bus.ROUTE}"></td>
+              <td th:text="${bus.VEHICLE}"></td>
+              <td th:text="${bus.TIMEPOINT}"></td>
+              <td th:text="${bus.distance}"></td>
+            </tr>
+          </table>
+        </div>
+        <div id="map" class="offset-md-6 col-md-6"></div>
       </div>
       <div class="text-center" th:if="${buses != null and buses.size() == 0}">
         <h3>Sorry, there are no nearby buses.</h3>
       </div>
     </div>
-    <div id="map"></div>
+    <!-- <div id="map"></div> -->
     <div th:if="${buses != null and buses.size() > 0}">
       <script th:inline="javascript">
         /*<![CDATA[*/

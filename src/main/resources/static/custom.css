@@ -1,5 +1,7 @@
 #map {
   height: 75%;
+  width: 30%;
+  position: absolute;
 }
 html,
 body {
